@@ -1,0 +1,21 @@
+
+// Function to execute the circling and attacking strategy
+void circleAndAttack() {
+  int turnDuration = 30; // Duration to turn around the opponent
+  int attackDelay = 250;   // Delay before attacking after circling
+
+  // Turn around the opponent
+  turnRight(); // Start turning around
+  delay(turnDuration); // Adjust duration based on your robot's turning speed
+  stopMotors(); // Stop turning
+
+  // Move forward for a short time to reposition for attack
+  moveForward();
+  delay(attackDelay);
+  stopMotors();
+
+  // Perform the attack
+  attackOpponent();
+
+  // Return to circling or random search
+}
