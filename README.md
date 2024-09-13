@@ -36,50 +36,5 @@
 
 ## Code Examples
 
-### Code 1 - Basic Sumo Robot Control
+[Sumo Code](Sumo_Code/Sumo_Code.ino)
 
-```arduino
-// Define motor control pins
-const int enA = 9;
-const int in1 = 6;
-const int in2 = 7;
-const int enB = 10;
-const int in3 = 8;
-const int in4 = 11;
-
-// Define SUMO JS200XF sensor pins
-const int frontSensorPin = A0;
-const int leftSensorPin = A1;
-const int rightSensorPin = A2;
-const int leftAngleSensorPin = A3;
-const int rightAngleSensorPin = A4;
-
-// Define IR sensor pins
-const int irFrontLeftPin = 2;
-const int irFrontRightPin = 3;
-const int irBackLeftPin = 4;
-const int irBackRightPin = 5;
-
-// Define push button pin
-const int buttonPin = 12;
-
-class Sensor {
-  public:
-    Sensor(int pin, bool isAnalog = true) : pin(pin), isAnalog(isAnalog) {
-      pinMode(pin, INPUT);
-    }
-    
-    int read() {
-      if (isAnalog) {
-        return analogRead(pin);
-      } else {
-        return digitalRead(pin);
-      }
-    }
-    
-  private:
-    int pin;
-    bool isAnalog;
-};
-
-// Rest of the code here...
